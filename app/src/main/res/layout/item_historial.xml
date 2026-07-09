@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="@color/verde_superficie"
+    app:strokeColor="@color/verde_suave"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/iv_thumb"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:background="@color/verde_suave" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/tv_item_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plastico"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/verde_texto"/>
+
+            <TextView
+                android:id="@+id/tv_item_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Bottle)"
+                android:textSize="14sp"
+                android:fontStyle="italic"
+                android:textColor="@color/texto_secundario"/>
+
+            <TextView
+                android:id="@+id/tv_item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12/10/2023"
+                android:textSize="12sp"
+                android:textColor="@color/texto_secundario"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_item_confidence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="95%"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/verde_principal"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

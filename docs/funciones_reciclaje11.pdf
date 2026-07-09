@@ -1,0 +1,589 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Length 2778 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 70 780 Tm
+(Funciones del proyecto Reciclaje11) Tj
+/F1 22 Tf
+1 0 0 1 50 743 Tm
+(Funciones del proyecto Reciclaje11) Tj
+/F1 10 Tf
+1 0 0 1 70 707 Tm
+(Este documento explica, una por una, las funciones que forman la app Clasificador de Reciclaje.) Tj
+/F1 10 Tf
+1 0 0 1 70 694 Tm
+(La idea es leerlo como una gu\355a del c\363digo, sin palabras raras ni relleno.) Tj
+/F1 16 Tf
+1 0 0 1 50 657 Tm
+(MainActivity.java) Tj
+/F1 11 Tf
+1 0 0 1 62 619 Tm
+(onCreate\(Bundle savedInstanceState\)) Tj
+/F1 10 Tf
+1 0 0 1 70 604 Tm
+(Prepara la pantalla principal. Conecta los botones de c\341mara, galer\355a e historial con sus) Tj
+/F1 10 Tf
+1 0 0 1 70 591 Tm
+(acciones.) Tj
+/F1 11 Tf
+1 0 0 1 62 562 Tm
+(revisarPermisoCamara\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 547 Tm
+(Comprueba si la app ya tiene permiso de c\341mara. Si lo tiene, abre la c\341mara. Si no, pide el) Tj
+/F1 10 Tf
+1 0 0 1 70 534 Tm
+(permiso.) Tj
+/F1 11 Tf
+1 0 0 1 62 505 Tm
+(abrirCamara\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 490 Tm
+(Abre la pantalla de c\341mara en tiempo real.) Tj
+/F1 11 Tf
+1 0 0 1 62 461 Tm
+(abrirResultadoConUri\(Uri uri\)) Tj
+/F1 10 Tf
+1 0 0 1 70 446 Tm
+(Abre la pantalla de resultado con la imagen que el usuario eligi\363 desde la galer\355a.) Tj
+/F1 11 Tf
+1 0 0 1 62 417 Tm
+(mostrarAvisoPermiso\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 402 Tm
+(Muestra un aviso cuando el permiso de c\341mara no fue concedido. Desde ah\355 se puede ir a Ajustes.) Tj
+/F1 16 Tf
+1 0 0 1 50 365 Tm
+(CameraActivity.java) Tj
+/F1 11 Tf
+1 0 0 1 62 327 Tm
+(onCreate\(Bundle s\)) Tj
+/F1 10 Tf
+1 0 0 1 70 312 Tm
+(Inicia la pantalla de c\341mara, prepara ML Kit, carga el modelo TensorFlow Lite y configura el) Tj
+/F1 10 Tf
+1 0 0 1 70 299 Tm
+(bot\363n para tomar foto.) Tj
+/F1 11 Tf
+1 0 0 1 62 270 Tm
+(iniciarCamara\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 255 Tm
+(Configura CameraX. Activa la vista previa, la captura de foto y el an\341lisis de frames en vivo.) Tj
+/F1 11 Tf
+1 0 0 1 62 226 Tm
+(analizarFrame\(ImageProxy proxy\)) Tj
+/F1 10 Tf
+1 0 0 1 70 211 Tm
+(Recibe cada frame de la c\341mara. Evita analizar dos frames al mismo tiempo, manda la imagen a ML) Tj
+/F1 10 Tf
+1 0 0 1 70 198 Tm
+(Kit y cierra el frame al terminar.) Tj
+/F1 11 Tf
+1 0 0 1 62 169 Tm
+(mostrarResultadoEnVivo\(List<DetectedObject> objects, ImageProxy proxy, int imageWidth, int imageHeight\)) Tj
+/F1 10 Tf
+1 0 0 1 70 154 Tm
+(Convierte el frame a bitmap, clasifica el material con el modelo, toma el objeto m\341s grande) Tj
+/F1 10 Tf
+1 0 0 1 70 141 Tm
+(detectado y actualiza el cuadro y los textos en pantalla.) Tj
+/F1 11 Tf
+1 0 0 1 62 112 Tm
+(objetoMasGrande\(List<DetectedObject> objects\)) Tj
+/F1 10 Tf
+1 0 0 1 70 97 Tm
+(Busca el objeto con el rect\341ngulo m\341s grande. Se usa para dibujar el cuadro principal.) Tj
+/F1 11 Tf
+1 0 0 1 62 68 Tm
+(areaDe\(Rect rect\)) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2924 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 70 780 Tm
+(Calcula el \341rea de un rect\341ngulo multiplicando ancho por alto.) Tj
+/F1 11 Tf
+1 0 0 1 62 751 Tm
+(nombreDelObjeto\(DetectedObject object\)) Tj
+/F1 10 Tf
+1 0 0 1 70 736 Tm
+(Toma la etiqueta que ML Kit le dio al objeto y la traduce a un texto m\341s claro, como Comida u) Tj
+/F1 10 Tf
+1 0 0 1 70 723 Tm
+(Objeto del hogar.) Tj
+/F1 11 Tf
+1 0 0 1 62 694 Tm
+(tomarFoto\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 679 Tm
+(Captura una foto, la guarda temporalmente y abre la pantalla de resultado para analizarla con) Tj
+/F1 10 Tf
+1 0 0 1 70 666 Tm
+(m\341s calma.) Tj
+/F1 11 Tf
+1 0 0 1 62 637 Tm
+(jpegABitmap\(ImageProxy image\)) Tj
+/F1 10 Tf
+1 0 0 1 70 622 Tm
+(Convierte una foto capturada en formato JPEG a un Bitmap listo para mostrarse o guardarse.) Tj
+/F1 11 Tf
+1 0 0 1 62 593 Tm
+(yuvABitmap\(ImageProxy image\)) Tj
+/F1 10 Tf
+1 0 0 1 70 578 Tm
+(Convierte un frame de c\341mara en formato YUV a Bitmap. Ese Bitmap es el que recibe el modelo para) Tj
+/F1 10 Tf
+1 0 0 1 70 565 Tm
+(clasificar.) Tj
+/F1 11 Tf
+1 0 0 1 62 536 Tm
+(convertirANv21\(ImageProxy image\)) Tj
+/F1 10 Tf
+1 0 0 1 70 521 Tm
+(Reordena los planos Y, U y V del frame en formato NV21 para poder convertirlo a imagen JPEG.) Tj
+/F1 11 Tf
+1 0 0 1 62 492 Tm
+(rotar\(Bitmap bitmap, int degrees\)) Tj
+/F1 10 Tf
+1 0 0 1 70 477 Tm
+(Corrige la orientaci\363n de la imagen seg\372n la rotaci\363n reportada por la c\341mara.) Tj
+/F1 11 Tf
+1 0 0 1 62 448 Tm
+(mostrarEstado\(String title, String detail, String instruction\)) Tj
+/F1 10 Tf
+1 0 0 1 70 433 Tm
+(Actualiza los textos de la c\341mara en el hilo principal.) Tj
+/F1 11 Tf
+1 0 0 1 62 404 Tm
+(mostrarToast\(String msg\)) Tj
+/F1 10 Tf
+1 0 0 1 70 389 Tm
+(Muestra un mensaje corto en pantalla.) Tj
+/F1 11 Tf
+1 0 0 1 62 360 Tm
+(onDestroy\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 345 Tm
+(Cierra el detector, el clasificador y el executor cuando la pantalla deja de usarse.) Tj
+/F1 16 Tf
+1 0 0 1 50 308 Tm
+(ResultActivity.java) Tj
+/F1 11 Tf
+1 0 0 1 62 270 Tm
+(onCreate\(Bundle savedInstanceState\)) Tj
+/F1 10 Tf
+1 0 0 1 70 255 Tm
+(Prepara la pantalla de resultado, carga el modelo y empieza el an\341lisis de la imagen recibida.) Tj
+/F1 11 Tf
+1 0 0 1 62 226 Tm
+(cargarImagen\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 211 Tm
+(Lee la imagen desde la galer\355a o desde una foto tomada con la c\341mara.) Tj
+/F1 11 Tf
+1 0 0 1 62 182 Tm
+(detectarObjeto\(Bitmap image\)) Tj
+/F1 10 Tf
+1 0 0 1 70 167 Tm
+(Manda la imagen a ML Kit para encontrar objetos y sus etiquetas generales.) Tj
+/F1 11 Tf
+1 0 0 1 62 138 Tm
+(mostrarResultado\(Bitmap image, List<DetectedObject> objects\)) Tj
+/F1 10 Tf
+1 0 0 1 70 123 Tm
+(Clasifica el material, dibuja el cuadro si hay objeto, muestra la confianza, el objeto detectado) Tj
+/F1 10 Tf
+1 0 0 1 70 110 Tm
+(y la instrucci\363n de reciclaje.) Tj
+/F1 11 Tf
+1 0 0 1 62 81 Tm
+(objetoMasGrande\(List<DetectedObject> objects\)) Tj
+/F1 10 Tf
+1 0 0 1 70 66 Tm
+(Escoge el objeto m\341s grande de la imagen.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2481 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 62 764 Tm
+(areaDe\(Rect rect\)) Tj
+/F1 10 Tf
+1 0 0 1 70 749 Tm
+(Devuelve el \341rea del rect\341ngulo de un objeto.) Tj
+/F1 11 Tf
+1 0 0 1 62 720 Tm
+(guardarResultado\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 705 Tm
+(Guarda la imagen y el resultado en la base de datos del historial.) Tj
+/F1 11 Tf
+1 0 0 1 62 676 Tm
+(mostrarMensaje\(String message\)) Tj
+/F1 10 Tf
+1 0 0 1 70 661 Tm
+(Muestra un estado cuando no se puede cargar la imagen, analizarla o abrir el modelo.) Tj
+/F1 11 Tf
+1 0 0 1 62 632 Tm
+(nombreDelObjeto\(DetectedObject object\)) Tj
+/F1 10 Tf
+1 0 0 1 70 617 Tm
+(Lee la mejor etiqueta de ML Kit y la convierte en un texto simple. Si no hay etiqueta, devuelve) Tj
+/F1 10 Tf
+1 0 0 1 70 604 Tm
+(No identificado.) Tj
+/F1 11 Tf
+1 0 0 1 62 575 Tm
+(onDestroy\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 560 Tm
+(Libera recursos cuando la pantalla se cierra.) Tj
+/F1 16 Tf
+1 0 0 1 50 523 Tm
+(TfliteClassifier.java) Tj
+/F1 11 Tf
+1 0 0 1 62 485 Tm
+(TfliteClassifier\(Context context\)) Tj
+/F1 10 Tf
+1 0 0 1 70 470 Tm
+(Carga el modelo TFLite, carga las etiquetas y lee el tama\361o de entrada y salida del modelo.) Tj
+/F1 11 Tf
+1 0 0 1 62 441 Tm
+(clasificar\(Bitmap bitmap, Rect box\)) Tj
+/F1 10 Tf
+1 0 0 1 70 426 Tm
+(Prepara la imagen, ejecuta el modelo y devuelve el material con su confianza.) Tj
+/F1 11 Tf
+1 0 0 1 62 397 Tm
+(buscarEtiquetaMetal\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 382 Tm
+(Busca la posici\363n de la clase Metal en las etiquetas. Ayuda cuando el modelo duda con objetos) Tj
+/F1 10 Tf
+1 0 0 1 70 369 Tm
+(met\341licos.) Tj
+/F1 11 Tf
+1 0 0 1 62 340 Tm
+(recortar\(Bitmap bitmap, Rect box\)) Tj
+/F1 10 Tf
+1 0 0 1 70 325 Tm
+(Recorta la imagen usando el cuadro del objeto. Si no hay cuadro v\341lido, usa la imagen completa.) Tj
+/F1 11 Tf
+1 0 0 1 62 296 Tm
+(cargarModelo\(Context context\)) Tj
+/F1 10 Tf
+1 0 0 1 70 281 Tm
+(Lee el archivo model_unquant.tflite desde assets y lo pone en un ByteBuffer.) Tj
+/F1 11 Tf
+1 0 0 1 62 252 Tm
+(cargarEtiquetas\(Context context\)) Tj
+/F1 10 Tf
+1 0 0 1 70 237 Tm
+(Lee labels.txt y limpia los n\372meros iniciales de cada etiqueta.) Tj
+/F1 11 Tf
+1 0 0 1 62 208 Tm
+(close\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 193 Tm
+(Cierra el int\351rprete de TensorFlow Lite.) Tj
+/F1 11 Tf
+1 0 0 1 62 164 Tm
+(Result\(String label, float confidence\)) Tj
+/F1 10 Tf
+1 0 0 1 70 149 Tm
+(Guarda el resultado de una clasificaci\363n: etiqueta y confianza.) Tj
+/F1 16 Tf
+1 0 0 1 50 112 Tm
+(RecyclingClassifier.java) Tj
+/F1 11 Tf
+1 0 0 1 62 74 Tm
+(RecyclingClassifier\(\)) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2632 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 70 780 Tm
+(Constructor privado para evitar crear objetos de esta clase. Solo contiene funciones est\341ticas.) Tj
+/F1 11 Tf
+1 0 0 1 62 751 Tm
+(normalizarCategoria\(String label\)) Tj
+/F1 10 Tf
+1 0 0 1 70 736 Tm
+(Convierte etiquetas parecidas en una categor\355a limpia: Pl\341stico, Vidrio, Papel, Cart\363n, Metal o) Tj
+/F1 10 Tf
+1 0 0 1 70 723 Tm
+(Basura.) Tj
+/F1 11 Tf
+1 0 0 1 62 694 Tm
+(instruccionPara\(String category\)) Tj
+/F1 10 Tf
+1 0 0 1 70 679 Tm
+(Devuelve el contenedor recomendado para la categor\355a.) Tj
+/F1 11 Tf
+1 0 0 1 62 650 Tm
+(colorPara\(String category\)) Tj
+/F1 10 Tf
+1 0 0 1 70 635 Tm
+(Devuelve el color usado para pintar el cuadro del objeto.) Tj
+/F1 11 Tf
+1 0 0 1 62 606 Tm
+(fondoPara\(String category\)) Tj
+/F1 10 Tf
+1 0 0 1 70 591 Tm
+(Devuelve el color de fondo del mensaje de instrucci\363n.) Tj
+/F1 11 Tf
+1 0 0 1 62 562 Tm
+(limpiarTexto\(String value\)) Tj
+/F1 10 Tf
+1 0 0 1 70 547 Tm
+(Pasa texto a min\372sculas y quita acentos para comparar sin errores.) Tj
+/F1 16 Tf
+1 0 0 1 50 510 Tm
+(OverlayView.java) Tj
+/F1 11 Tf
+1 0 0 1 62 472 Tm
+(Box\(Rect rect, String label, int color\)) Tj
+/F1 10 Tf
+1 0 0 1 70 457 Tm
+(Guarda la informaci\363n necesaria para dibujar un cuadro: posici\363n, texto y color.) Tj
+/F1 11 Tf
+1 0 0 1 62 428 Tm
+(OverlayView\(Context context, AttributeSet attrs\)) Tj
+/F1 10 Tf
+1 0 0 1 70 413 Tm
+(Prepara los pinceles que se usan para dibujar cuadros y textos.) Tj
+/F1 11 Tf
+1 0 0 1 62 384 Tm
+(mostrarCajas\(List<Box> newBoxes, int imageWidth, int imageHeight\)) Tj
+/F1 10 Tf
+1 0 0 1 70 369 Tm
+(Recibe las cajas nuevas y fuerza que la vista se vuelva a dibujar.) Tj
+/F1 11 Tf
+1 0 0 1 62 340 Tm
+(onDraw\(Canvas canvas\)) Tj
+/F1 10 Tf
+1 0 0 1 70 325 Tm
+(Dibuja los rect\341ngulos sobre la imagen, ajustando la escala al tama\361o de la pantalla.) Tj
+/F1 16 Tf
+1 0 0 1 50 288 Tm
+(HistorialActivity.java) Tj
+/F1 11 Tf
+1 0 0 1 62 250 Tm
+(onCreate\(Bundle savedInstanceState\)) Tj
+/F1 10 Tf
+1 0 0 1 70 235 Tm
+(Prepara la pantalla de historial, la barra superior, la lista y la base de datos.) Tj
+/F1 11 Tf
+1 0 0 1 62 206 Tm
+(prepararLista\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 191 Tm
+(Configura el RecyclerView y su adaptador.) Tj
+/F1 11 Tf
+1 0 0 1 62 162 Tm
+(cargarHistorial\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 147 Tm
+(Lee los registros guardados y cuenta cu\341ntos hay por categor\355a.) Tj
+/F1 11 Tf
+1 0 0 1 62 118 Tm
+(actualizarResumen\(int plastico, int vidrio, int papel, int carton, int metal, int basura\)) Tj
+/F1 10 Tf
+1 0 0 1 70 103 Tm
+(Muestra el resumen de categor\355as guardadas.) Tj
+/F1 11 Tf
+1 0 0 1 62 74 Tm
+(mostrarDialogoEliminar\(ObjetoReciclado item\)) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 2383 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 70 780 Tm
+(Pregunta antes de borrar un registro.) Tj
+/F1 11 Tf
+1 0 0 1 62 751 Tm
+(eliminarRegistro\(ObjetoReciclado item\)) Tj
+/F1 10 Tf
+1 0 0 1 70 736 Tm
+(Borra la imagen guardada, elimina el registro de Room y recarga la lista.) Tj
+/F1 11 Tf
+1 0 0 1 62 707 Tm
+(onDestroy\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 692 Tm
+(Apaga el executor de base de datos al cerrar la pantalla.) Tj
+/F1 16 Tf
+1 0 0 1 50 655 Tm
+(HistorialAdapter.java) Tj
+/F1 11 Tf
+1 0 0 1 62 617 Tm
+(alMantenerPresionado\(ObjetoReciclado item\)) Tj
+/F1 10 Tf
+1 0 0 1 70 602 Tm
+(Funci\363n de la interfaz que se ejecuta cuando el usuario mantiene presionado un registro.) Tj
+/F1 11 Tf
+1 0 0 1 62 573 Tm
+(HistorialAdapter\(List<ObjetoReciclado> items, OnItemLongClickListener longClickListener\)) Tj
+/F1 10 Tf
+1 0 0 1 70 558 Tm
+(Recibe los datos iniciales y la acci\363n para pulsaci\363n larga.) Tj
+/F1 11 Tf
+1 0 0 1 62 529 Tm
+(actualizarDatos\(List<ObjetoReciclado> newItems\)) Tj
+/F1 10 Tf
+1 0 0 1 70 514 Tm
+(Reemplaza la lista del historial y refresca la vista.) Tj
+/F1 11 Tf
+1 0 0 1 62 485 Tm
+(onCreateViewHolder\(ViewGroup parent, int viewType\)) Tj
+/F1 10 Tf
+1 0 0 1 70 470 Tm
+(Crea la vista de cada fila del historial.) Tj
+/F1 11 Tf
+1 0 0 1 62 441 Tm
+(onBindViewHolder\(ViewHolder holder, int position\)) Tj
+/F1 10 Tf
+1 0 0 1 70 426 Tm
+(Llena una fila con categor\355a, etiqueta, confianza, fecha e imagen.) Tj
+/F1 11 Tf
+1 0 0 1 62 397 Tm
+(getItemCount\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 382 Tm
+(Devuelve cu\341ntos registros hay en la lista.) Tj
+/F1 11 Tf
+1 0 0 1 62 353 Tm
+(ViewHolder\(ItemHistorialBinding binding\)) Tj
+/F1 10 Tf
+1 0 0 1 70 338 Tm
+(Guarda las referencias de una fila del historial.) Tj
+/F1 16 Tf
+1 0 0 1 50 301 Tm
+(AppDatabase.java) Tj
+/F1 11 Tf
+1 0 0 1 62 263 Tm
+(objetoDao\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 248 Tm
+(Da acceso a las operaciones de la tabla de objetos reciclados.) Tj
+/F1 11 Tf
+1 0 0 1 62 219 Tm
+(obtenerBaseDeDatos\(Context context\)) Tj
+/F1 10 Tf
+1 0 0 1 70 204 Tm
+(Crea o devuelve la \372nica instancia de la base de datos Room.) Tj
+/F1 16 Tf
+1 0 0 1 50 167 Tm
+(ObjetoDao.java) Tj
+/F1 11 Tf
+1 0 0 1 62 129 Tm
+(insertar\(ObjetoReciclado objeto\)) Tj
+/F1 10 Tf
+1 0 0 1 70 114 Tm
+(Guarda un registro nuevo en el historial.) Tj
+/F1 11 Tf
+1 0 0 1 62 85 Tm
+(obtenerTodos\(\)) Tj
+/F1 10 Tf
+1 0 0 1 70 70 Tm
+(Devuelve todos los registros, empezando por el m\341s reciente.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 641 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 62 764 Tm
+(eliminar\(ObjetoReciclado objeto\)) Tj
+/F1 10 Tf
+1 0 0 1 70 749 Tm
+(Elimina un registro del historial.) Tj
+/F1 11 Tf
+1 0 0 1 62 720 Tm
+(contarPorCategoria\(String cat\)) Tj
+/F1 10 Tf
+1 0 0 1 70 705 Tm
+(Cuenta cu\341ntos registros hay de una categor\355a espec\355fica.) Tj
+/F1 16 Tf
+1 0 0 1 50 668 Tm
+(ObjetoReciclado.java) Tj
+/F1 11 Tf
+1 0 0 1 62 630 Tm
+(ObjetoReciclado\(String categoria, float confianza, String etiquetaImageLabeling, long fechaEscaneo, String rutaImagen\)) Tj
+/F1 10 Tf
+1 0 0 1 70 615 Tm
+(Crea un registro con categor\355a, confianza, etiqueta del objeto, fecha e imagen guardada.) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 14 0 R >>
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000154 00000 n 
+0000000251 00000 n 
+0000003080 00000 n 
+0000003206 00000 n 
+0000006181 00000 n 
+0000006307 00000 n 
+0000008839 00000 n 
+0000008965 00000 n 
+0000011649 00000 n 
+0000011777 00000 n 
+0000014212 00000 n 
+0000014340 00000 n 
+0000015032 00000 n 
+trailer
+<< /Size 16 /Root 1 0 R >>
+startxref
+15160
+%%EOF

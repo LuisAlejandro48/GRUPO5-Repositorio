@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/verde_fondo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clasificador de Reciclaje"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/verde_principal_oscuro"
+        android:layout_marginBottom="44dp"
+        android:textAlignment="center"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCamera"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Abrir cámara"
+        app:backgroundTint="@color/verde_principal"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="12dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGallery"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Elegir imagen"
+        style="@style/Widget.Material3.Button.TonalButton"
+        app:backgroundTint="@color/verde_suave"
+        android:textColor="@color/verde_texto"
+        android:layout_marginBottom="32dp"
+        app:cornerRadius="12dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver historial"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:textColor="@color/verde_principal"/>
+
+</LinearLayout>

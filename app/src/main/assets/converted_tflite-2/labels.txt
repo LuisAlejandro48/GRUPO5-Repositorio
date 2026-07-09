@@ -1,0 +1,6 @@
+0 Plastico
+1 Vidrio
+2 Papel
+3 Carton
+4 Metal
+5 Basura

@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Reciclaje11" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/verde_principal</item>
+        <item name="colorPrimaryContainer">@color/verde_suave</item>
+        <item name="colorSecondary">@color/verde_principal_oscuro</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/verde_principal_oscuro</item>
+    </style>
+
+    <style name="Theme.Reciclaje11" parent="Base.Theme.Reciclaje11" />
+</resources>
