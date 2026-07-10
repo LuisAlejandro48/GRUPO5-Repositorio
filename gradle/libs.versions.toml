@@ -4,8 +4,6 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.2"
 constraintlayout = "2.1.4"
-mlkitObjectDetectionCustom = "17.0.2"
-mlkitObjectDetection = "17.0.2"
 tflite = "2.16.1"
 camerax = "1.3.4"
 room = "2.6.1"
@@ -19,8 +17,6 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-mlkit-objectdetection-custom = { group = "com.google.mlkit", name = "object-detection-custom", version.ref = "mlkitObjectDetectionCustom" }
-mlkit-objectdetection = { group = "com.google.mlkit", name = "object-detection", version.ref = "mlkitObjectDetection" }
 tflite = { group = "org.tensorflow", name = "tensorflow-lite", version.ref = "tflite" }
 camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "camerax" }
 camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "camerax" }

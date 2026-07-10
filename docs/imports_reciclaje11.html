@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Imports del proyecto Reciclaje11</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      color: #1f2d24;
+      line-height: 1.45;
+      margin: 42px;
+    }
+    h1 {
+      color: #1b5e20;
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+    h2 {
+      color: #2e7d32;
+      border-bottom: 1px solid #d7e8dc;
+      font-size: 20px;
+      margin-top: 26px;
+      padding-bottom: 4px;
+    }
+    h3 {
+      color: #244d2c;
+      font-size: 16px;
+      margin: 18px 0 6px;
+    }
+    p {
+      margin: 4px 0 10px;
+    }
+    .intro {
+      color: #526b58;
+      margin-bottom: 22px;
+    }
+    .item {
+      margin: 7px 0;
+      break-inside: avoid;
+    }
+    code {
+      background: #edf6ef;
+      border-radius: 4px;
+      color: #17441f;
+      padding: 1px 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Imports del proyecto Reciclaje11</h1>
+  <p class="intro">Este documento explica para qué sirve cada import usado en los archivos Java del proyecto. Está separado por carpeta y por archivo para que sea fácil ubicarlo en Android Studio.</p>
+
+  <h2>Carpeta: app/src/main/java/com/example/reciclaje11</h2>
+
+  <h3>CameraActivity.java</h3>
+  <div class="item"><p><code>android.content.Intent</code>: abre otra pantalla. Aquí se usa para ir a <code>ResultActivity</code> después de tomar una foto.</p></div>
+  <div class="item"><p><code>android.graphics.Bitmap</code>: representa imágenes en memoria. Se usa para procesar frames y fotos.</p></div>
+  <div class="item"><p><code>android.graphics.BitmapFactory</code>: convierte bytes de imagen en un <code>Bitmap</code>.</p></div>
+  <div class="item"><p><code>android.graphics.ImageFormat</code>: indica el formato de imagen. Se usa con <code>YuvImage</code> para trabajar con NV21.</p></div>
+  <div class="item"><p><code>android.graphics.Matrix</code>: rota el bitmap cuando la cámara entrega la imagen con orientación diferente.</p></div>
+  <div class="item"><p><code>android.graphics.Rect</code>: guarda el rectángulo del objeto detectado y áreas de recorte.</p></div>
+  <div class="item"><p><code>android.graphics.YuvImage</code>: permite convertir un frame YUV de cámara a JPEG.</p></div>
+  <div class="item"><p><code>android.media.Image</code>: obtiene la imagen real desde <code>ImageProxy</code> para enviarla a ML Kit.</p></div>
+  <div class="item"><p><code>android.os.Bundle</code>: recibe datos básicos del ciclo de vida en <code>onCreate</code>.</p></div>
+  <div class="item"><p><code>android.widget.Toast</code>: muestra mensajes cortos como errores de cámara o guardado.</p></div>
+  <div class="item"><p><code>androidx.annotation.NonNull</code>: marca parámetros que no deben ser nulos, como callbacks de CameraX.</p></div>
+  <div class="item"><p><code>androidx.annotation.OptIn</code>: permite usar APIs experimentales de CameraX de forma explícita.</p></div>
+  <div class="item"><p><code>androidx.appcompat.app.AppCompatActivity</code>: base de la Activity con compatibilidad de AppCompat.</p></div>
+  <div class="item"><p><code>androidx.camera.core.CameraSelector</code>: selecciona la cámara, en este caso la trasera.</p></div>
+  <div class="item"><p><code>androidx.camera.core.ExperimentalGetImage</code>: anotación necesaria para usar <code>proxy.getImage()</code>.</p></div>
+  <div class="item"><p><code>androidx.camera.core.ImageAnalysis</code>: analiza frames en tiempo real.</p></div>
+  <div class="item"><p><code>androidx.camera.core.ImageCapture</code>: captura fotos desde la cámara.</p></div>
+  <div class="item"><p><code>androidx.camera.core.ImageCaptureException</code>: maneja errores al tomar una foto.</p></div>
+  <div class="item"><p><code>androidx.camera.core.ImageProxy</code>: representa cada frame o foto que entrega CameraX.</p></div>
+  <div class="item"><p><code>androidx.camera.core.Preview</code>: conecta la vista previa de cámara con el <code>PreviewView</code>.</p></div>
+  <div class="item"><p><code>androidx.camera.lifecycle.ProcessCameraProvider</code>: une cámara, preview, captura y análisis al ciclo de vida de la pantalla.</p></div>
+  <div class="item"><p><code>androidx.core.content.ContextCompat</code>: da el executor principal y ayuda con compatibilidad AndroidX.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.databinding.ActivityCameraBinding</code>: clase generada por ViewBinding para acceder a las vistas de <code>activity_camera.xml</code>.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.common.InputImage</code>: formato de imagen que ML Kit necesita para analizar un frame.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.objects.DetectedObject</code>: representa un objeto encontrado por ML Kit, con cuadro y etiquetas.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.objects.ObjectDetection</code>: crea el detector de objetos de ML Kit.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.objects.ObjectDetector</code>: objeto que ejecuta la detección en cámara.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.objects.defaults.ObjectDetectorOptions</code>: configura ML Kit en modo tiempo real, múltiples objetos y clasificación.</p></div>
+  <div class="item"><p><code>java.io.ByteArrayOutputStream</code>: guarda temporalmente bytes al convertir YUV a JPEG.</p></div>
+  <div class="item"><p><code>java.io.FileOutputStream</code>: escribe la foto capturada en almacenamiento interno.</p></div>
+  <div class="item"><p><code>java.nio.ByteBuffer</code>: lee bytes desde planos de imagen de CameraX.</p></div>
+  <div class="item"><p><code>java.util.Collections</code>: crea listas simples para el overlay, como una sola caja o una lista vacía.</p></div>
+  <div class="item"><p><code>java.util.List</code>: maneja listas de objetos detectados.</p></div>
+  <div class="item"><p><code>java.util.Locale</code>: formatea textos con porcentaje y traduce etiquetas sin depender del idioma del teléfono.</p></div>
+  <div class="item"><p><code>java.util.concurrent.ExecutorService</code>: ejecuta el análisis de cámara fuera del hilo principal.</p></div>
+  <div class="item"><p><code>java.util.concurrent.Executors</code>: crea el executor usado por CameraX.</p></div>
+
+  <h3>ResultActivity.java</h3>
+  <div class="item"><p><code>android.graphics.Bitmap</code>: imagen cargada desde cámara o galería.</p></div>
+  <div class="item"><p><code>android.graphics.BitmapFactory</code>: convierte archivos o streams en bitmap.</p></div>
+  <div class="item"><p><code>android.graphics.Rect</code>: guarda el cuadro del objeto detectado.</p></div>
+  <div class="item"><p><code>android.net.Uri</code>: identifica la imagen seleccionada desde galería.</p></div>
+  <div class="item"><p><code>android.os.Bundle</code>: datos del ciclo de vida de la Activity.</p></div>
+  <div class="item"><p><code>android.view.View</code>: cambia la visibilidad de vistas, como el aviso.</p></div>
+  <div class="item"><p><code>android.widget.Toast</code>: muestra mensajes cortos al guardar o fallar.</p></div>
+  <div class="item"><p><code>androidx.appcompat.app.AppCompatActivity</code>: base de la pantalla de resultado.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.databinding.ActivityResultBinding</code>: acceso generado a las vistas de <code>activity_result.xml</code>.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.db.AppDatabase</code>: obtiene la base de datos Room para guardar historial.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.db.ObjetoReciclado</code>: modelo del registro que se guarda.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.common.InputImage</code>: imagen de entrada para ML Kit.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.objects.DetectedObject</code>: resultado de detección de ML Kit.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.objects.ObjectDetection</code>: crea el detector.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.objects.ObjectDetector</code>: ejecuta la detección en la imagen.</p></div>
+  <div class="item"><p><code>com.google.mlkit.vision.objects.defaults.ObjectDetectorOptions</code>: configura ML Kit para una imagen fija.</p></div>
+  <div class="item"><p><code>java.io.File</code>: representa el archivo donde se guarda la imagen del historial.</p></div>
+  <div class="item"><p><code>java.io.FileOutputStream</code>: escribe la imagen escaneada en almacenamiento interno.</p></div>
+  <div class="item"><p><code>java.io.InputStream</code>: lee imágenes desde galería o almacenamiento interno.</p></div>
+  <div class="item"><p><code>java.util.Collections</code>: crea listas para enviar cajas al overlay.</p></div>
+  <div class="item"><p><code>java.util.List</code>: lista de objetos detectados.</p></div>
+  <div class="item"><p><code>java.util.Locale</code>: formatea porcentajes y compara etiquetas.</p></div>
+  <div class="item"><p><code>java.util.concurrent.ExecutorService</code>: ejecuta guardado en segundo plano.</p></div>
+  <div class="item"><p><code>java.util.concurrent.Executors</code>: crea el executor para base de datos/archivos.</p></div>
+
+  <h3>MainActivity.java</h3>
+  <div class="item"><p><code>android.Manifest</code>: accede a la constante del permiso de cámara.</p></div>
+  <div class="item"><p><code>android.content.Intent</code>: abre cámara, historial, resultado y ajustes.</p></div>
+  <div class="item"><p><code>android.content.pm.PackageManager</code>: revisa si el permiso de cámara fue concedido.</p></div>
+  <div class="item"><p><code>android.net.Uri</code>: maneja la imagen elegida y la ruta de ajustes de la app.</p></div>
+  <div class="item"><p><code>android.os.Bundle</code>: datos iniciales de <code>onCreate</code>.</p></div>
+  <div class="item"><p><code>android.provider.Settings</code>: abre la pantalla de ajustes de la app si falta permiso.</p></div>
+  <div class="item"><p><code>androidx.activity.result.ActivityResultLauncher</code>: maneja resultados modernos de permisos y galería.</p></div>
+  <div class="item"><p><code>androidx.activity.result.contract.ActivityResultContracts</code>: contratos para pedir permiso y elegir contenido.</p></div>
+  <div class="item"><p><code>androidx.appcompat.app.AlertDialog</code>: muestra el diálogo de permiso necesario.</p></div>
+  <div class="item"><p><code>androidx.appcompat.app.AppCompatActivity</code>: base de la pantalla principal.</p></div>
+  <div class="item"><p><code>androidx.core.content.ContextCompat</code>: revisa permisos con compatibilidad AndroidX.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.databinding.ActivityMainBinding</code>: acceso generado a las vistas de <code>activity_main.xml</code>.</p></div>
+
+  <h3>HistorialActivity.java</h3>
+  <div class="item"><p><code>android.os.Bundle</code>: ciclo de vida de la pantalla.</p></div>
+  <div class="item"><p><code>android.widget.Toast</code>: muestra mensaje al eliminar.</p></div>
+  <div class="item"><p><code>androidx.appcompat.app.AlertDialog</code>: confirma antes de borrar un registro.</p></div>
+  <div class="item"><p><code>androidx.appcompat.app.AppCompatActivity</code>: base de la Activity.</p></div>
+  <div class="item"><p><code>androidx.recyclerview.widget.LinearLayoutManager</code>: organiza la lista del historial en vertical.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.databinding.ActivityHistorialBinding</code>: acceso a vistas del layout de historial.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.db.AppDatabase</code>: obtiene la base de datos.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.db.ObjetoDao</code>: ejecuta consultas del historial.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.db.ObjetoReciclado</code>: tipo de dato de cada registro.</p></div>
+  <div class="item"><p><code>java.io.File</code>: borra la imagen asociada al registro eliminado.</p></div>
+  <div class="item"><p><code>java.util.ArrayList</code>: crea la lista inicial vacía para el adaptador.</p></div>
+  <div class="item"><p><code>java.util.List</code>: lista de registros obtenidos desde Room.</p></div>
+  <div class="item"><p><code>java.util.Locale</code>: formatea el resumen de categorías.</p></div>
+  <div class="item"><p><code>java.util.concurrent.ExecutorService</code>: ejecuta operaciones de base de datos fuera del hilo principal.</p></div>
+  <div class="item"><p><code>java.util.concurrent.Executors</code>: crea el executor usado por historial.</p></div>
+
+  <h3>HistorialAdapter.java</h3>
+  <div class="item"><p><code>android.graphics.BitmapFactory</code>: carga la miniatura guardada del historial.</p></div>
+  <div class="item"><p><code>android.view.LayoutInflater</code>: infla el XML de cada fila.</p></div>
+  <div class="item"><p><code>android.view.ViewGroup</code>: tipo del contenedor donde se crea cada fila.</p></div>
+  <div class="item"><p><code>androidx.annotation.NonNull</code>: indica que parámetros del RecyclerView no deben ser nulos.</p></div>
+  <div class="item"><p><code>androidx.recyclerview.widget.RecyclerView</code>: base del adaptador y del ViewHolder.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.databinding.ItemHistorialBinding</code>: acceso generado a vistas de <code>item_historial.xml</code>.</p></div>
+  <div class="item"><p><code>com.example.reciclaje11.db.ObjetoReciclado</code>: modelo que representa cada fila del historial.</p></div>
+  <div class="item"><p><code>java.text.SimpleDateFormat</code>: convierte la fecha guardada en texto legible.</p></div>
+  <div class="item"><p><code>java.util.Date</code>: crea una fecha desde el timestamp guardado.</p></div>
+  <div class="item"><p><code>java.util.List</code>: lista de registros que muestra el adaptador.</p></div>
+  <div class="item"><p><code>java.util.Locale</code>: formatea fecha y confianza según configuración regional.</p></div>
+
+  <h3>OverlayView.java</h3>
+  <div class="item"><p><code>android.content.Context</code>: contexto necesario para crear una vista personalizada.</p></div>
+  <div class="item"><p><code>android.graphics.Canvas</code>: superficie donde se dibujan cajas y texto.</p></div>
+  <div class="item"><p><code>android.graphics.Color</code>: define colores para texto y dibujo.</p></div>
+  <div class="item"><p><code>android.graphics.Paint</code>: configura cómo se dibujan líneas, texto y fondos.</p></div>
+  <div class="item"><p><code>android.graphics.Rect</code>: representa el rectángulo de cada objeto detectado.</p></div>
+  <div class="item"><p><code>android.util.AttributeSet</code>: permite crear la vista desde XML.</p></div>
+  <div class="item"><p><code>android.view.View</code>: clase base para construir la vista personalizada.</p></div>
+  <div class="item"><p><code>androidx.annotation.Nullable</code>: indica que los atributos XML pueden venir nulos.</p></div>
+  <div class="item"><p><code>java.util.ArrayList</code>: guarda internamente las cajas que se van a dibujar.</p></div>
+  <div class="item"><p><code>java.util.List</code>: tipo general para recibir y manejar cajas.</p></div>
+
+  <h3>RecyclingClassifier.java</h3>
+  <div class="item"><p><code>android.graphics.Color</code>: devuelve colores asociados a cada categoría.</p></div>
+  <div class="item"><p><code>java.text.Normalizer</code>: quita acentos para comparar textos como Cartón y carton.</p></div>
+  <div class="item"><p><code>java.util.Locale</code>: pasa textos a minúsculas de forma estable.</p></div>
+
+  <h3>TfliteClassifier.java</h3>
+  <div class="item"><p><code>android.content.Context</code>: permite leer assets del proyecto.</p></div>
+  <div class="item"><p><code>android.graphics.Bitmap</code>: imagen que se prepara para el modelo.</p></div>
+  <div class="item"><p><code>android.graphics.Rect</code>: recorte opcional del objeto detectado.</p></div>
+  <div class="item"><p><code>org.tensorflow.lite.Interpreter</code>: ejecuta el modelo TensorFlow Lite.</p></div>
+  <div class="item"><p><code>java.io.BufferedReader</code>: lee etiquetas línea por línea.</p></div>
+  <div class="item"><p><code>java.io.ByteArrayOutputStream</code>: reúne bytes del modelo leído desde assets.</p></div>
+  <div class="item"><p><code>java.io.InputStream</code>: abre archivos dentro de assets.</p></div>
+  <div class="item"><p><code>java.io.InputStreamReader</code>: convierte bytes de labels en texto.</p></div>
+  <div class="item"><p><code>java.nio.ByteBuffer</code>: buffer de entrada para TensorFlow Lite.</p></div>
+  <div class="item"><p><code>java.nio.ByteOrder</code>: usa el orden nativo de bytes que espera TFLite.</p></div>
+  <div class="item"><p><code>java.util.ArrayList</code>: guarda las etiquetas leídas.</p></div>
+  <div class="item"><p><code>java.util.List</code>: tipo de la lista de etiquetas.</p></div>
+
+  <h2>Carpeta: app/src/main/java/com/example/reciclaje11/db</h2>
+
+  <h3>AppDatabase.java</h3>
+  <div class="item"><p><code>android.content.Context</code>: contexto usado para crear la base de datos.</p></div>
+  <div class="item"><p><code>androidx.room.Database</code>: anotación que declara la base de datos Room.</p></div>
+  <div class="item"><p><code>androidx.room.Room</code>: constructor de la base de datos.</p></div>
+  <div class="item"><p><code>androidx.room.RoomDatabase</code>: clase base que debe extender una base Room.</p></div>
+
+  <h3>ObjetoDao.java</h3>
+  <div class="item"><p><code>androidx.room.Dao</code>: marca la interfaz como DAO de Room.</p></div>
+  <div class="item"><p><code>androidx.room.Delete</code>: indica que un método borra registros.</p></div>
+  <div class="item"><p><code>androidx.room.Insert</code>: indica que un método inserta registros.</p></div>
+  <div class="item"><p><code>androidx.room.Query</code>: permite escribir consultas SQL.</p></div>
+  <div class="item"><p><code>java.util.List</code>: devuelve colecciones de registros desde consultas.</p></div>
+
+  <h3>ObjetoReciclado.java</h3>
+  <div class="item"><p><code>androidx.room.Entity</code>: marca la clase como tabla de Room.</p></div>
+  <div class="item"><p><code>androidx.room.PrimaryKey</code>: define la llave primaria de la tabla.</p></div>
+</body>
+</html>
